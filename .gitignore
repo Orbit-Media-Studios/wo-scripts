@@ -1,0 +1,11 @@
+# System files
+.DS_Store
+
+# Working files
+*.csv
+*.gz
+*.log
+
+# Log folders
+/nginx-logs/
+/nginx-logs-testing/
