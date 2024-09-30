@@ -20,7 +20,7 @@ Logfiles from nginx, apache/httpd, and other [common web servers are standardize
 
 🐍 [getmixedlang.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getmixedlang.py): Detect mixed language content with lingua, tidy language signals for international SEO
 
-🐍 [getpagectr.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getpagectr.py): Summarizes a folder of .gz archived logfiles for "CTRs" to each next URL (builds on getpagenext.py's approach)  
+🐍 [getpagectr.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getpagectr.py): Summarizes a folder of .gz-archived logfiles for "CTRs" to each discovered exit URL
 
 🐍 [getsitesearch.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getsitesearch.py): Summarizes site search data from a single access log in a CSV
 
