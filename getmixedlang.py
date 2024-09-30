@@ -51,7 +51,6 @@ cleantext = re.sub('[^0-9a-zA-Z.]+', ' ', cleantext)
 cleantext = cleantext.replace(" .", "") # extra dots
 cleantext = cleantext.replace("|", "\n")
 cleantext = cleantext.replace("-", "\n")
-ireplace("Datacolor", "", cleantext) # case insensitive find/replace
 ireplace("LinkedIn", "", cleantext) # case insensitive find/replace
 ireplace("Youtube", "", cleantext) # case insensitive find/replace
 ireplace("Facebook", "", cleantext) # case insensitive find/replace
