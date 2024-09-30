@@ -16,7 +16,7 @@ Logfiles from nginx, apache/httpd, and other [common web servers are standardize
 
 🐍 [getcsv.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getcsv.py): Just converts a flat logfile into CSV format, simple first test of your python environment
 
-🐍 [getexitpages.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getexitpages.py): Loop through a single server log to pair up exit pages for a particular URL, export CSV
+🐍 [getexitpages.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getexitpages.py): Loop through a single server log to pair up exit pages from a particular URL, export CSV
 
 🐍 [getmixedlang.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getmixedlang.py): Detect mixed language content with lingua, tidy language signals for international SEO
 
