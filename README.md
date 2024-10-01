@@ -10,7 +10,7 @@ Logfiles from nginx, apache/httpd, and other [common web servers are standardize
 
 ## Testing
 
-🐍 [testparse.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/testparse.py): Tests the first 3 lines of a server log to confirm the regex format is correct
+🐍 [testparse.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/testparse.py): Test the first 3 lines of a server log to confirm the regex format is correct
 
 ## Analysis 
 
