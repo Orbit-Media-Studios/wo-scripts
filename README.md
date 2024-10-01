@@ -28,6 +28,6 @@ Logfiles from nginx, apache/httpd, and other [common web servers are standardize
 
 ### International SEO
 
-🐍 [getmixedlang.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getmixedlang.py): Detect mixed language content using lingua to scrub signals
+🐍 [getmixedlang.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getmixedlang.py): Detect and isolate mixed language content using lingua
 
 
