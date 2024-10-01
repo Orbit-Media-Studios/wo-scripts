@@ -1,10 +1,12 @@
 # About
 
-This is a small collection of utilities used by Orbit Media's [Website Optimization](https://www.orbitmedia.com/website-optimization/) team. Contains independent scripts for varied SEO/CRO use cases. Use them however you like. 
+This is a small collection of utilities used by Orbit Media's [Website Optimization](https://www.orbitmedia.com/website-optimization/) team. Contains independent scripts for varied SEO/CRO use cases. Use them however you like.
 
-Configure most scripts near the top of the file. That includes places to save a CSV file, where to find files, a live URL to evaluate, etc.
+## Getting Started
 
-Logfiles from nginx, apache/httpd, and other [common web servers are standardized](https://en.wikipedia.org/wiki/Common_Log_Format), but you may need to customize the regex somewhat near the top of each file for some. Use testparse.py for testing that.
+Configure most scripts near the top of the file. That includes where to find files, a live URL to evaluate, what to name a CSV, etc.
+
+Logfiles from nginx, Apache httpd, and other [common web servers are standardized](https://en.wikipedia.org/wiki/Common_Log_Format), but you may need to customize the regex somewhat near the top of each file for some. Use testparse.py for testing that.
 
 # Scripts
 
