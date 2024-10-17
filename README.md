@@ -28,6 +28,11 @@ Logfiles from nginx, Apache httpd, and other [common web servers are standardize
 
 🐍 [getsitesearchmulti.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getsitesearchmulti.py): Summarize site search data from a folder full of .gz-archived logs
 
+🐍 [getdrilldowntier1.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getdrilldowntier1.py): Summarize # of subpages and and aggregate hits (old UA drilldown report)
+
+🐍 [getdrilldowntier2.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getdrilldowntier2.py): Same as "tier1" script, but summarizes all tier 2 subfolders
+
+
 ### International SEO
 
 🐍 [getmixedlang.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getmixedlang.py): Detect and isolate mixed language content using [lingua](https://github.com/pemistahl/lingua-py)
