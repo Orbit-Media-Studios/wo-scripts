@@ -46,9 +46,10 @@ def export_filtered_logs(log_file_path, export_path):
         
         for line in log_file:
             log_data = parse_log_line(line)
-            csv_writer.writerow(log_data)
+            if log_data:  # Check if log_data is not None
+                csv_writer.writerow(log_data)
 
 # Process the log file and export filtered records to CSV
-export_filtered_logs(log_file_path, export_path, filter_path)
+export_filtered_logs(log_file_path, export_path)
 
 print(f"Export complete! Filtered logs saved to {export_path}")
