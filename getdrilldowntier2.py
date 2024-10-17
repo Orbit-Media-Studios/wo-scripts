@@ -1,4 +1,4 @@
-# Drilldown traffic/subfolder summary for all tier1 folders
+# Drilldown traffic summary for tier2 subfolders
 
 # Libraries
 import re
@@ -9,7 +9,7 @@ from collections import defaultdict
 
 # Configuration
 log_file_path = "nginx-logs/access.log"  # Path to your log file
-export_path = "folder_summary.csv"  # Path to the CSV export file
+export_path = "tier2_folder_summary.csv"  # Path to the CSV export file
 bot_list = ['bot','googlebot', 'bingbot', 'yandex', 'baiduspider', 'ahrefsbot', 'semrushbot', 'dataforseo','gptbot','pinterestbot','Cloudflare-Healthchecks','makemerrybot','applebot','statuscake','pingdom']  # List of bots to exclude
 
 # Regular expression to parse log lines
@@ -36,17 +36,17 @@ def parse_log_line(line):
         }
     return None
 
-# Function to extract level one folder from the request path (ignoring URL variables)
-def extract_level_one_folder(request_path):
+# Function to extract level two folder from the request path (ignoring URL variables)
+def extract_level_two_folder(request_path):
     parsed_url = urlparse(request_path)
     path = parsed_url.path  # Ignore the query string (i.e., no URL variables)
     
     # Remove leading/trailing slashes and split by "/"
     path_parts = path.strip("/").split("/")
     
-    # Return the first part of the path as the "level one folder"
-    if path_parts:
-        return "/" + path_parts[0]  # Ensure it starts with a "/"
+    # Return the first two parts of the path as the "level two folder"
+    if len(path_parts) >= 2:
+        return "/" + path_parts[0] + "/" + path_parts[1]  # Ensure it starts with "/"
     return None
 
 # Function to check if the user-agent is a bot based on the provided list
@@ -68,7 +68,7 @@ def process_folder_summary(log_file_path, bot_list):
                 if is_bot(log_data['user_agent'], bot_list):
                     continue
                 
-                folder = extract_level_one_folder(log_data['request_path'])
+                folder = extract_level_two_folder(log_data['request_path'])
                 
                 # Strip query parameters from the request path for unique subpage counting
                 clean_path = urlparse(log_data['request_path']).path  # Ignore the query string
@@ -89,10 +89,8 @@ def export_folder_summary_to_csv(folder_hits, folder_pages, export_path):
             total_subpages = len(folder_pages[folder])  # Count unique subpages
             csv_writer.writerow([folder, total_subpages, hits])  # Write folder data
 
-
 # Process the log file and export folder summary to CSV, ignoring bots
 folder_hits, folder_pages = process_folder_summary(log_file_path, bot_list)
 export_folder_summary_to_csv(folder_hits, folder_pages, export_path)
 
-
-print(f"Processing complete! Folder summary saved to {export_path}")
+print(f"Processing complete! Tier 2 folder summary saved to {export_path}")
