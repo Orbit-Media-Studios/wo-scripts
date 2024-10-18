@@ -11,6 +11,7 @@ from collections import defaultdict
 log_file_path = "nginx-logs/access.log"  # Path to your log file
 export_path = "folder_summary.csv"  # Path to the CSV export file
 bot_list = ['bot','googlebot', 'bingbot', 'yandex', 'baiduspider', 'ahrefsbot', 'semrushbot', 'dataforseo','gptbot','pinterestbot','Cloudflare-Healthchecks','makemerrybot','applebot','statuscake','pingdom']  # List of bots to exclude
+url_exceptions = ['_', 'contact', 'review', 'jsonapi', 'widget', 'blog', 'agreement','admincp','promokit']  # List of URL patterns to exclude
 
 # Regular expression to parse log lines
 log_pattern = re.compile(
@@ -54,6 +55,11 @@ def is_bot(user_agent, bot_list):
     # Check if any bot string appears in the user-agent
     return any(bot in user_agent.lower() for bot in bot_list)
 
+# Function to check if the URL contains any exclusion patterns
+def is_excluded_url(request_path, url_exceptions):
+    # Check if any of the patterns in the exclusion list are in the URL
+    return any(exception in request_path for exception in url_exceptions)
+
 # Function to process the log file and collect folder summaries, ignoring bots and URL variables
 def process_folder_summary(log_file_path, bot_list):
     folder_hits = defaultdict(int)  # Track total hits per folder
@@ -68,6 +74,10 @@ def process_folder_summary(log_file_path, bot_list):
                 if is_bot(log_data['user_agent'], bot_list):
                     continue
                 
+                # Skip URLs that match any of the exclusion patterns
+                if is_excluded_url(log_data['request_path'], url_exceptions):
+                    continue
+
                 folder = extract_level_one_folder(log_data['request_path'])
                 
                 # Strip query parameters from the request path for unique subpage counting
