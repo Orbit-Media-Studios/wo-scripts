@@ -4,7 +4,6 @@
 import re
 import csv
 from urllib.parse import urlparse
-from datetime import datetime
 from collections import defaultdict
 
 # Configuration
@@ -22,13 +21,9 @@ log_pattern = re.compile(
 def parse_log_line(line):
     match = log_pattern.match(line)
     if match:
-        # Parse timestamp
-        timestamp_str = match.group('timestamp')
-        timestamp = datetime.strptime(timestamp_str, "%d/%b/%Y:%H:%M:%S %z")
-        
         return {
             'ip_address': match.group('ip'),
-            'timestamp': timestamp,
+            'timestamp': match.group('timestamp'),
             'status_code': int(match.group('status')),
             'method': match.group('method'),
             'request_path': match.group('path'),
