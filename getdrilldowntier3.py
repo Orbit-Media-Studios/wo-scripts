@@ -1,4 +1,4 @@
-# Drilldown traffic summary for tier2 subfolders with support for .gz compressed logs
+# Drilldown traffic summary for tier3 subfolders with support for .gz compressed logs
 
 # Libraries
 import re
@@ -10,10 +10,10 @@ from collections import defaultdict
 
 # Configuration
 log_file_path = "nginx-logs/"  # Path to your log file (or folder of .gz files)
-export_path = "tier2_folder_summary.csv"  # Path to the CSV export file
+export_path = "tier3_folder_summary.csv"  # Updated: Path to the CSV export file for tier3 subfolders
 process_folder = True  # Set to True if log_file_path is a folder of .gz files, False if it's a single plain text file
 bot_list = ['bot','googlebot', 'bingbot', 'yandex', 'baiduspider', 'ahrefsbot', 'semrushbot', 'dataforseo','gptbot','pinterestbot','Cloudflare-Healthchecks','makemerrybot','applebot','statuscake','pingdom']  # List of bots to exclude
-url_exceptions = ['_', 'contact', 'review', 'jsonapi', 'widget', 'blog', 'agreement','admincp','promokit']  # List of URL patterns to exclude
+url_exceptions = ['_', 'contact', 'review', 'jsonapi', 'widget', 'blog', 'agreement', 'admincp', 'promokit']  # List of URL patterns to exclude
 
 # Regular expression to parse log lines
 log_pattern = re.compile(
@@ -35,17 +35,18 @@ def parse_log_line(line):
         }
     return None
 
-# Function to extract level two folder from the request path (ignoring URL variables)
-def extract_level_two_folder(request_path):
+# Function to extract level three folder from the request path (ignoring URL variables)
+# Updated: Extracting the first three parts of the path to capture tier 3 subfolders
+def extract_level_three_folder(request_path):
     parsed_url = urlparse(request_path)
     path = parsed_url.path  # Ignore the query string (i.e., no URL variables)
     
     # Remove leading/trailing slashes and split by "/"
     path_parts = path.strip("/").split("/")
     
-    # Return the first two parts of the path as the "level two folder"
-    if len(path_parts) >= 2:
-        return "/" + path_parts[0] + "/" + path_parts[1]  # Ensure it starts with "/"
+    # Return the first three parts of the path as the "level three folder"
+    if len(path_parts) >= 3:
+        return "/" + path_parts[0] + "/" + path_parts[1] + "/" + path_parts[2]  # Ensure it starts with "/"
     return None
 
 # Function to check if the user-agent is a bot based on the provided list
@@ -83,7 +84,7 @@ def process_log_line(line, folder_hits, folder_pages, bot_list, url_exceptions):
         if is_excluded_url(log_data['request_path'], url_exceptions):
             return
         
-        folder = extract_level_two_folder(log_data['request_path'])
+        folder = extract_level_three_folder(log_data['request_path'])  # Updated: Using the tier 3 folder extractor
         
         # Strip query parameters from the request path for unique subpage counting
         clean_path = urlparse(log_data['request_path']).path  # Ignore the query string
@@ -128,4 +129,4 @@ def process_folder_summary(log_file_path, export_path, process_folder, bot_list,
 # Process the log file or folder and export the folder summary to CSV
 process_folder_summary(log_file_path, export_path, process_folder, bot_list, url_exceptions)
 
-print(f"Processing complete! Tier 2 folder summary saved to {export_path}")
+print(f"Processing complete! Tier 3 folder summary saved to {export_path}")
