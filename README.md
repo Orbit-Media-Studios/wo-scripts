@@ -9,7 +9,7 @@ If you're a marketer or exec whose primary function is not programmin, don't be 
 Quick install for Mac:
 
 1. Open Terminal 
-2. Install Homebrew: visit brew.sh and paste the command you see
+2. Install [Homebrew](https://brew.sh): ``/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"``
 3. Install Python:
 ``brew install python``
 4. Install Pip:
@@ -20,7 +20,7 @@ Wasn't that easy? Now run a script.
 5. Run a script:
 ``python getdata.py``
 
-If you see errors, paste them into ChatGPT. Most of scripts rely on libraries of outside code, you probably just need that extra tool (such as pandas). That's why you installed Pip. 
+If you see errors, paste them into ChatGPT. Most of scripts rely on libraries of outside code and you probably just need that extra tool (such as Pandas). That's why you installed Pip. 
 
 6. Install Pandas:
 ``pip install pandas``
