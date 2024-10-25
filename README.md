@@ -4,7 +4,32 @@ This is a small collection of utilities used by Orbit Media's [Website Optimizat
 
 ## Getting Started
 
-Configure most scripts near the top of the file. That includes where to find files, a live URL to evaluate, what to name a CSV, etc.
+If you're a marketer or exec whose primary function is not programmin, don't be intimidated.
+
+Quick install for Mac:
+
+1. Open Terminal 
+2. Install Homebrew: visit brew.sh and paste the command you see
+3. Install Python:
+``brew install python``
+4. Install Pip:
+``python -m ensurepip --upgrade``
+
+Wasn't that easy? Now run a script.
+
+5. Run a script:
+``python getdata.py``
+
+If you see errors, paste them into ChatGPT. Most of scripts rely on libraries of outside code, you probably just need that extra tool (such as pandas). That's why you installed Pip. 
+
+6. Install Pandas:
+``pip install pandas``
+
+Now you have Pandas, Pip, and Python, and can try again.
+
+## Troubleshooting
+
+Configure most scripts near the top of the file. That includes where to find files/folders, a live URL to evaluate, what to name the CSV export, etc.
 
 Logfiles from nginx, Apache httpd, and other [common web servers are standardized](https://en.wikipedia.org/wiki/Common_Log_Format), but you may need to customize the regex somewhat near the top of each file for some. Use testparse.py for testing that.
 
