@@ -10,15 +10,15 @@ Logfiles from nginx, Apache httpd, and other [common web servers are standardize
 
 # Scripts
 
-## Testing
+## Utilities
 
-🐍 [testparse.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/testparse.py): Test the first 3 lines of a server log to confirm the regex format is correct
+🐍 [testparse.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/testparse.py): Parse just the first 3 lines of a server log to confirm the regex format is correct
+
+🐍 [getcsv.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getcsv.py): Converts a flat server log into CSV
 
 ## Analysis 
 
 ### Logfiles 
-
-🐍 [getcsv.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getcsv.py): Converts a flat server log into CSV: a simple first test of your python environment!
 
 🐍 [getexitpages.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getexitpages.py): Discover and list all exit pages from a particular URL
 
@@ -31,6 +31,8 @@ Logfiles from nginx, Apache httpd, and other [common web servers are standardize
 🐍 [getdrilldowntier1.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getdrilldowntier1.py): Summarize # of subpages and and aggregate hits (old UA drilldown report)
 
 🐍 [getdrilldowntier2.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getdrilldowntier2.py): Same as "tier1" script, but summarizes all tier 2 subfolders
+
+🐍 [getdrilldowntier3.py](https://github.com/Orbit-Media-Studios/wo-scripts/blob/main/getdrilldowntier3.py): Same as "tier1" script, but summarizes all tier 3 subfolders 
 
 
 ### International SEO

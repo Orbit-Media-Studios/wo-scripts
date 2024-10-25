@@ -13,7 +13,7 @@ log_file_path = "nginx-logs/"  # Path to your log file (or folder of .gz files)
 export_path = "tier3_folder_summary.csv"  # Updated: Path to the CSV export file for tier3 subfolders
 process_folder = True  # Set to True if log_file_path is a folder of .gz files, False if it's a single plain text file
 bot_list = ['bot','googlebot', 'bingbot', 'yandex', 'baiduspider', 'ahrefsbot', 'semrushbot', 'dataforseo','gptbot','pinterestbot','Cloudflare-Healthchecks','makemerrybot','applebot','statuscake','pingdom']  # List of bots to exclude
-url_exceptions = ['_', 'contact', 'review', 'jsonapi', 'widget', 'blog', 'agreement', 'admincp', 'promokit']  # List of URL patterns to exclude
+url_exceptions = ['_', 'contact', 'review', 'jsonapi', 'widget', 'blog', 'agreement', 'admincp', 'promokit','login','redirect','event-planner','dynamic','api','external','join']  # List of URL patterns to exclude
 
 # Regular expression to parse log lines
 log_pattern = re.compile(
