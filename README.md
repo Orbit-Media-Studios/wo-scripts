@@ -20,7 +20,7 @@ Wasn't that easy? Now run a script.
 5. Run a script:
 ``python getdata.py``
 
-If you see errors, paste them into ChatGPT. Most of scripts rely on libraries of outside code and you probably just need that extra tool (such as Pandas). That's why you installed Pip. 
+Paste any errors into ChatGPT. Most of scripts rely on libraries of outside code and you probably just need that extra tool (such as Pandas). That's why you installed Pip. 
 
 6. Install Pandas:
 ``pip install pandas``
