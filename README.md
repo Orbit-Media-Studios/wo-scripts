@@ -29,7 +29,9 @@ Now you have Pandas, Pip, and Python, and can try again.
 
 ## Troubleshooting
 
-Configure most scripts near the top of the file. That includes where to find files/folders, a live URL to evaluate, what to name the CSV export, etc.
+Configure most scripts near the top of the file.
+
+![script configuration](./img/configure.png)
 
 Logfiles from nginx, Apache httpd, and other [common web servers are standardized](https://en.wikipedia.org/wiki/Common_Log_Format), but you may need to customize the regex somewhat near the top of each file for some. Use testparse.py for testing that.
 

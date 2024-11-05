@@ -10,7 +10,7 @@ from collections import defaultdict
 log_file_path = "nginx-logs/access.log"  # Path to your log file
 export_path = "folder_summary.csv"  # Path to the CSV export file
 bot_list = ['bot','googlebot', 'bingbot', 'yandex', 'baiduspider', 'ahrefsbot', 'semrushbot', 'dataforseo','gptbot','pinterestbot','Cloudflare-Healthchecks','makemerrybot','applebot','statuscake','pingdom']  # List of bots to exclude
-url_exceptions = ['_', 'contact', 'review', 'jsonapi', 'widget', 'blog', 'agreement','admincp','promokit']  # List of URL patterns to exclude
+url_exceptions = ['contact', 'review', 'jsonapi', 'widget', 'blog', 'agreement','admincp','promokit']  # List of URL patterns to exclude
 
 # Regular expression to parse log lines
 log_pattern = re.compile(
