@@ -4,7 +4,7 @@ This is a small collection of utilities used by Orbit Media's [Website Optimizat
 
 ## Getting Started
 
-If you're a marketer or exec whose primary function is not programmin, don't be intimidated.
+If you're a marketer or exec whose primary function isn't programming, don't be intimidated.
 
 Quick install for Mac:
 
