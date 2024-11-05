@@ -1,6 +1,6 @@
 # About
 
-This is a small collection of utilities used by Orbit Media's [Website Optimization](https://www.orbitmedia.com/website-optimization/) team. Contains independent scripts for varied SEO/CRO use cases. Use them however you like.
+This is a small collection of utilities used by Orbit Media's [Website Optimization](https://www.orbitmedia.com/website-optimization/) team. Contains independent scripts for varied SEO, CRO, and business intelligence use cases. Use them however you like.
 
 ## Getting Started
 
